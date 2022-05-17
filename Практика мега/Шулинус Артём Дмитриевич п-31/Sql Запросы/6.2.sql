@@ -1,0 +1,1 @@
+Select * from DogPassport where IdDogPassport between 1 and 5

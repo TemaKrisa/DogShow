@@ -1,0 +1,27 @@
+--1
+--Select CONCAT(Name,' ',Surname,' ',Pathronymic) as [Ф.И.О]  from DogOwner
+--2
+--Select sum(IdDog) as [Число] From Dog
+--3
+--Select Upper(NickName), Lower(Breed) from DogPassport
+--4
+--Select Year(Date) as[Год] from Award
+--5
+--Select NickName from DogPassport  group by NickName
+--6
+--Select NickName,IdDogOwner from DogPassport  group by NickName,IdDogOwner
+--7
+--Select NickName,IdDogOwner from DogPassport  group by NickName,IdDogOwner HAVING IdDogOwner > 1
+--8
+--Select 1 from DogPassport HAVING  1 = 1
+-- 9
+--Select NickName from DogPassport order by NickName
+--10
+--use DogShow;
+--Insert Expert values ('Дмитрий','Флопавич',9,5)
+--11
+ --не могу 
+--12
+--Update Expert Set IdClub = 4 where IdExpert = 5
+--13
+--Delete from Expert where Name='Дмитрий'

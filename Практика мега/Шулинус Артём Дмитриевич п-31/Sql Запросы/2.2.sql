@@ -1,0 +1,1 @@
+Select * from Dog where IdDog = 2 or IdDog = 2

@@ -1,0 +1,1 @@
+Select CONCAT(NickName,' ', Breed) as [Кличка и порода] from DogPassport

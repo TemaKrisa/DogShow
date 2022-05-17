@@ -1,0 +1,16 @@
+use DogShow
+--1
+--Select DogPassport.NickName ,Dog.FatherNickName,Dog.MotherNickName from DogPassport,Dog
+--2.1
+--Select DogPassport.NickName ,Dog.FatherNickName,Dog.MotherNickName from DogPassport,Dog where DogPassport.IdDogPassport = dog.IdDogPassporty
+--2.2
+--Select DogPassport.NickName ,DogOwner.Name from DogPassport,DogOwner where DogPassport.IdDogOwner = DogOwner.IdDogOwner
+--3
+--Select DogPassport.NickName ,DogOwner.Name from DogPassport,DogOwner where DogPassport.IdDogOwner = DogOwner.IdDogOwner AND DogOwner.IdDogOwner = 1
+--4
+--Select DogPassport.NickName ,DogOwner.Name, Dog.IdClub from DogPassport,DogOwner,Dog 
+--where DogPassport.IdDogOwner = DogOwner.IdDogOwner and DogOwner.IdDogOwner = DogPassport.IdDogOwner AND DogOwner.IdDogOwner = 1  and DogPassport.IdDogPassport = Dog.IdDogPassporty
+--5
+--Select DogPassport.NickName ,DogOwner.Name from DogPassport Left join DogOwner on DogPassport.IdDogOwner = DogOwner.IdDogOwner
+--6
+--Select DogPassport.NickName ,DogOwner.Name from DogPassport right join DogOwner on DogPassport.IdDogOwner = DogOwner.IdDogOwner

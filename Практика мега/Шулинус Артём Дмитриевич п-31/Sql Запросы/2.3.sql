@@ -1,0 +1,1 @@
+Select * from Dog where not IdDog = 2 

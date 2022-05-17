@@ -1,0 +1,1 @@
+Select * from Dog where IdClub = 1

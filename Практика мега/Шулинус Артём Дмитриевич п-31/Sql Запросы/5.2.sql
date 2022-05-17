@@ -1,0 +1,1 @@
+Select * from DogPassport where NickName like 'Ï%'

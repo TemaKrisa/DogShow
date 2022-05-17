@@ -1,0 +1,1 @@
+Select * from DogOwner where Pathronymic = null
