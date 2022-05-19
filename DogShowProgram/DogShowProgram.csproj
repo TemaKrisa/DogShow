@@ -59,8 +59,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Pages\Main_Page.xaml.cs">
+      <DependentUpon>Main_Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Authorization_Window.xaml.cs">
       <DependentUpon>Authorization_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Main_Window.xaml.cs">
+      <DependentUpon>Main_Window.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -100,13 +106,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Main_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\buttons_Dictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Authorization_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Pages\Полосочка.png" />
+    <Page Include="Windows\Main_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
