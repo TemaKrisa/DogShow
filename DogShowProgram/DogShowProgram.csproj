@@ -122,6 +122,9 @@
     <Compile Include="Windows\Main_Window.xaml.cs">
       <DependentUpon>Main_Window.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Messagebox_Window.xaml.cs">
+      <DependentUpon>Messagebox_Window.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\Authorization_Page.xaml.cs">
@@ -181,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Main_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Messagebox_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
