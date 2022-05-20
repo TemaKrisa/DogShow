@@ -68,15 +68,19 @@
     <Grid>
         <!--<Image Height="120" Width="400" VerticalAlignment="Top" Margin="0,30,0,0"/>-->
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
-            <Button Height="35" Width="35" Background="Transparent" HorizontalAlignment="Right" Margin="5" BorderThickness="0" Foreground="#FF646FD4" BorderBrush="{x:Null}">
+            <Button x:Name="Min_but"
+                Height="35" Width="35" Background="Transparent" HorizontalAlignment="Right" 
+                    Margin="5" BorderThickness="0" Foreground="#00FFFFFF" 
+                    BorderBrush="{x:Null}" Style="{DynamicResource TopBut}" Click="Min_but_Click">
                 <Polygon Points="
                          0,5
                          ,0,10,
                          90,10,
-                         80,5" Fill="#FF9BA3EB" />
+                         80,5" Fill="#FF9BA3EB" Cursor="Hand" />
                 <!--<Image x:Name="line" Source="Полосочка.png" Stretch="Fill" OpacityMask="Black"/>-->
             </Button>
-            <Button Height="35" Width="35" Background="Transparent" HorizontalAlignment="Right" Margin="5" BorderThickness="0">
+            <Button Style="{DynamicResource TopBut}" x:Name="Close_but"
+                Height="35" Width="35" Background="Transparent" HorizontalAlignment="Right" Margin="5" BorderThickness="0" Cursor="Hand" Click="Close_but_Click">
                 <Path Data="M0,0L16,16M16,0L0,16" Stroke="#FF9BA3EB" StrokeThickness="5" Margin="2" Stretch="Fill"/>
             </Button>
         </StackPanel>

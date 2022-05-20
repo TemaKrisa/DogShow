@@ -20,9 +20,21 @@ namespace DogShowProgram.Pages
     /// </summary>
     public partial class Authorization_Page : Page
     {
+        public Window win = new Window();
+
         public Authorization_Page()
         {
             InitializeComponent();
+        }
+
+        private void Close_but_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Min_but_Click(object sender, RoutedEventArgs e)
+        {
+            win.WindowState = WindowState.Minimized;
         }
     }
 }

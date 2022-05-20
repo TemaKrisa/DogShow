@@ -9,8 +9,8 @@
       Title="Main_Page">
 
     <Grid>
-        <StackPanel>
-            <Button Style="{DynamicResource Rounded}"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"> 
+            <Button Style="{DynamicResource Rounded}" Content="Клубы"/>
         </StackPanel>
     </Grid>
 </Page>

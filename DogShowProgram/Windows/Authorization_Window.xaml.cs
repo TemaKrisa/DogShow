@@ -28,6 +28,7 @@ namespace DogShowProgram.Windows
         {
             Pages.Authorization_Page page = new Pages.Authorization_Page();
             Frame_main.Navigate(page);
+            page.win = this;
         }
     }
 }
