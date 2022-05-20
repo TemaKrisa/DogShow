@@ -36,5 +36,27 @@ namespace DogShowProgram.Pages
         {
             win.WindowState = WindowState.Minimized;
         }
+
+        private void authorization_Button_Click(object sender, RoutedEventArgs e)
+        {
+            using (DogShowEntities db = new DogShowEntities())
+            {
+
+                User user = db.User.Where(p => p.Login == login_Textbox.Text && p.Password == password_Textbox.Text).FirstOrDefault();
+                if (user == null)
+                {
+                    MessageBox.Show("Ты шо дурак?");
+                    return;
+                }
+                if (user.Login == null || user.Password == null)
+                {
+                    MessageBox.Show("Ты шо дурак?");
+                    return;
+                }
+                MessageBox.Show("Всё ок.");    
+
+            }
+            
+        }
     }
 }
