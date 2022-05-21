@@ -2,9 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style x:Key="Rounded" TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="#9BA3EB"/>
-        <Setter Property="BorderBrush" Value="#242F9B"/>
-        <Setter Property="Foreground" Value="#242F9B"/>
+        <Setter Property="Background" Value="#DBDFFD"/>
+        <Setter Property="BorderBrush" Value="#646FD4"/>
+        <Setter Property="Foreground" Value="#646FD4"/>
         <Setter Property="Content" Value="Text"/>
         <Setter Property="FontSize" Value="30"/>
         <Setter Property="Width" Value="150"/>

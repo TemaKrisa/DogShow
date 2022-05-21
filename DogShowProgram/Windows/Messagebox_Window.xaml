@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DogShowProgram.Windows"
         mc:Ignorable="d"
-        Title="Messagebox_Window" Height="300" Width="400">
+        Title="Messagebox_Window" Height="250" Width="400" WindowStyle="None" Background="{x:Null}" BorderBrush="{x:Null}" AllowsTransparency="True"
+         WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
         
+        
+        <Border Grid.RowSpan="3" Height="250" Width="400" Background="#DBDFFD" CornerRadius="35" BorderBrush="#646FD4" BorderThickness="8"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Height="50" Width="50" Source="/DogShowProgram;component/Images/Error.png"
+                   x:Name="error_icon"/>
+            <TextBlock Text="Название уведомления" x:Name="nameMessage_textbox"
+                       TextAlignment="Center" FontWeight="Bold" FontSize="18" Height="30"/>
+        </StackPanel>
+        <Polygon Grid.RowSpan="2" Stroke="#9BA3EB" Points=" 
+                 40,64             
+                 360,64" StrokeThickness="3"/>
+        <TextBlock Grid.Row="1"  x:Name="message_textbox"
+            Text="Уведомление" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" FontSize="15"/>
+        <Button x:Name="Ok_button"
+            Grid.Row="2" Style="{DynamicResource Rounded}"
+            Height="35" VerticalAlignment="Top" Content="OK" FontSize="20" VerticalContentAlignment="Center" Click="Ok_button_Click" Cursor="Hand"/>
     </Grid>
 </Window>

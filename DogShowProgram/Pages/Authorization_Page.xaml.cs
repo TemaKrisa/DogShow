@@ -21,7 +21,7 @@ namespace DogShowProgram.Pages
     public partial class Authorization_Page : Page
     {
         public Window win = new Window();
-
+        
         public Authorization_Page()
         {
             InitializeComponent();
@@ -45,16 +45,18 @@ namespace DogShowProgram.Pages
                 User user = db.User.Where(p => p.Login == login_Textbox.Text && p.Password == password_Textbox.Text).FirstOrDefault();
                 if (user == null)
                 {
-                    MessageBox.Show("Ты шо дурак?");
+                    Windows.Messagebox_Window messagebox = new Windows.Messagebox_Window() { nameMessage = "Ошибка", Message = "Введённый логин или пароль не верный!", error = true };
+                    messagebox.ShowDialog();
                     return;
                 }
                 if (user.Login == null || user.Password == null)
                 {
-                    MessageBox.Show("Ты шо дурак?");
+                    Windows.Messagebox_Window messagebox = new Windows.Messagebox_Window() { nameMessage = "Ошибка", Message = "Введённый логин или пароль не верный!" ,error = true };
+                    messagebox.ShowDialog();
                     return;
                 }
-                MessageBox.Show("Всё ок.");    
-
+                Windows.Сaptcha_Window captcha = new Windows.Сaptcha_Window() { nameMessage = "Введите капчу" };
+                captcha.ShowDialog();
             }
             
         }
