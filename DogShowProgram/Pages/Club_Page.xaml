@@ -26,6 +26,14 @@
                 <DataGridTextColumn Header="Порода" Binding="{Binding Breed}"/>
                 <DataGridTextColumn Header="Максимальный номер" Binding="{Binding MaxNumber}"/>
                 <DataGridTextColumn Header="Минимальный номер" Binding="{Binding MinNumber}"/>
+                <DataGridTemplateColumn Header="Изменить">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="editClub_but" 
+                                    Content="Изменить" Click="editClub_but_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

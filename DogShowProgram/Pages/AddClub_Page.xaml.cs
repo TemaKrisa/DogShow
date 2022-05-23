@@ -38,6 +38,7 @@ namespace DogShowProgram.Pages
                 db.SaveChanges();
                 Windows.Messagebox_Window messagebox = new Windows.Messagebox_Window() {nameMessage = "Сообщение", Message = "Клуб добавлен!", error = false};
                 messagebox.ShowDialog();
+                Scripts.DataHolder.frame_main.GoBack();
             }
         }
 

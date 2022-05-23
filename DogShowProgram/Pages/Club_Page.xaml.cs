@@ -27,7 +27,7 @@ namespace DogShowProgram.Pages
 
         private void datagrid_club_Loaded(object sender, RoutedEventArgs e)
         {
-           using(DogShowEntities db = new DogShowEntities())
+            using (DogShowEntities db = new DogShowEntities())
             {
                 datagrid_club.ItemsSource = db.Club.ToList();
             }
@@ -42,6 +42,48 @@ namespace DogShowProgram.Pages
         {
             AddClub_Page addClub_Page = new AddClub_Page();
             Scripts.DataHolder.frame_main.Navigate(addClub_Page);
+        }
+
+        private void editClub_but_Click(object sender, RoutedEventArgs e)
+        {
+            int r = datagrid_club.SelectedIndex;
+
+            string nameClub = null;
+            string breed = null;
+            string maxNumber = null;
+            string minNumber = null;
+
+            for (int i = 0; i < 3;)
+            {
+                switch (i)
+                {
+                    case 0:
+                        TextBlock itemL = datagrid_club.Columns[i].GetCellContent(datagrid_club.Items[r]) as TextBlock;
+                        nameClub = itemL.Text;
+                        break;
+                    case 1:
+                        TextBlock itemP = datagrid_club.Columns[i].GetCellContent(datagrid_club.Items[r]) as TextBlock;
+                        breed = itemP.Text;
+                        break;
+                    case 2:
+                        TextBlock itemf = datagrid_club.Columns[i].GetCellContent(datagrid_club.Items[r]) as TextBlock;
+                        maxNumber = itemf.Text;
+                        break;
+                    case 3:
+                        TextBlock itemS = datagrid_club.Columns[i].GetCellContent(datagrid_club.Items[r]) as TextBlock;
+                        minNumber = itemS.Text;
+                        break;
+                }
+                i++;
+            }
+
+            using (DogShowEntities db = new DogShowEntities())
+            {
+                Club club = db.Club.Where(p => p.NameClub == nameClub && p.Breed == breed).FirstOrDefault();
+                Pages.EditClub_Page editClub = new EditClub_Page();
+                editClub.Club = club;
+                Scripts.DataHolder.frame_main.Navigate(editClub);
+            }
         }
     }
 }
