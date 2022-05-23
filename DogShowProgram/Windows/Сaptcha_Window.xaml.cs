@@ -26,7 +26,8 @@ namespace DogShowProgram.Windows
                 nameMessage_textbox.Text = value;
             }
         }
-
+        string result = null;
+        public Window win = new Window();
         Random _random = new Random();
 
         public Сaptcha_Window()
@@ -55,8 +56,8 @@ namespace DogShowProgram.Windows
         //создание символов
 
         private void GenerateSymbols(int count)
-
         {
+           
 
             string alphabet = "WERPASFHKXVBM234578";
 
@@ -65,6 +66,9 @@ namespace DogShowProgram.Windows
             {
 
                 string symbol = alphabet.ElementAt(_random.Next(0, alphabet.Length)).ToString();
+
+                
+                result += $"{symbol}";
 
                 TextBlock lbl = new TextBlock();
 
@@ -75,8 +79,6 @@ namespace DogShowProgram.Windows
                 lbl.RenderTransform = new RotateTransform(_random.Next(-45, 45));
 
                 lbl.Margin = new Thickness(20, 0, 20, 0);
-
-                //lbl.Foreground = ra
 
                 SPanelSymbols.Children.Add(lbl);
 
@@ -144,6 +146,19 @@ namespace DogShowProgram.Windows
 
             UpdateCaptcha();
 
+        }
+
+        private void Ok_button_Click(object sender, RoutedEventArgs e)
+        {
+            if (result == enter_textbox.Text)
+                MessageBox.Show("Всё ок!");
+            else
+            {
+                enter_textbox.Text = string.Empty;
+                result = null;
+                MessageBox.Show("Ты дэбил");
+                UpdateCaptcha();
+            }
         }
     }
 }

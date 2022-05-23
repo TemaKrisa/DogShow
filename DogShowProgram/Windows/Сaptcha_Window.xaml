@@ -32,11 +32,11 @@
             </Border>
         <Canvas x:Name="CanvasNoise" Grid.Row="1"
                 Height="240" Width="440" ClipToBounds="True"/>
-        <TextBox Margin="10,10,10,5"
+        <TextBox Margin="10,10,10,5" x:Name="enter_textbox" 
             Grid.Row="1" Height="50" Width="300" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{DynamicResource textbox_rounden}"/>
 
         <Button x:Name="Ok_button"
             Grid.Row="2" Style="{DynamicResource Rounded}" 
-            Height="35" VerticalAlignment="Top" Content="OK" FontSize="20" VerticalContentAlignment="Center" Cursor="Hand"/>
+            Height="35" VerticalAlignment="Top" Content="OK" FontSize="20" VerticalContentAlignment="Center" Cursor="Hand" Click="Ok_button_Click" IsDefault="True"/>
     </Grid>
 </Window>

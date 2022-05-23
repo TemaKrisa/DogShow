@@ -55,7 +55,7 @@ namespace DogShowProgram.Pages
                     messagebox.ShowDialog();
                     return;
                 }
-                Windows.Сaptcha_Window captcha = new Windows.Сaptcha_Window() { nameMessage = "Введите капчу" };
+                Windows.Сaptcha_Window captcha = new Windows.Сaptcha_Window() { nameMessage = "Введите капчу" ,win = this.win};
                 captcha.ShowDialog();
             }
             
