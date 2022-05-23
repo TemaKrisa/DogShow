@@ -57,7 +57,7 @@ namespace DogShowProgram.Windows
 
         private void GenerateSymbols(int count)
         {
-           
+
 
             string alphabet = "WERPASFHKXVBM234578";
 
@@ -67,7 +67,7 @@ namespace DogShowProgram.Windows
 
                 string symbol = alphabet.ElementAt(_random.Next(0, alphabet.Length)).ToString();
 
-                
+
                 result += $"{symbol}";
 
                 TextBlock lbl = new TextBlock();
@@ -151,12 +151,20 @@ namespace DogShowProgram.Windows
         private void Ok_button_Click(object sender, RoutedEventArgs e)
         {
             if (result == enter_textbox.Text)
-                MessageBox.Show("Всё ок!");
+            {
+                Windows.Main_Window window = new Windows.Main_Window();
+                window.Show();
+                this.Close();
+            }
+
             else
             {
+                Messagebox_Window messagebox = new Messagebox_Window { nameMessage = "Ошибка", Message = "Капча введина не верно!" };
+                messagebox.ShowDialog();
+
                 enter_textbox.Text = string.Empty;
                 result = null;
-                MessageBox.Show("Ты дэбил");
+
                 UpdateCaptcha();
             }
         }

@@ -101,6 +101,12 @@
     <Compile Include="Expert.cs">
       <DependentUpon>Ado.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddClub_Page.xaml.cs">
+      <DependentUpon>AddClub_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Club_Page.xaml.cs">
+      <DependentUpon>Club_Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Main_Page.xaml.cs">
       <DependentUpon>Main_Page.xaml</DependentUpon>
     </Compile>
@@ -110,6 +116,7 @@
     <Compile Include="Ring.cs">
       <DependentUpon>Ado.tt</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\DataHolder.cs" />
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Ado.tt</DependentUpon>
     </Compile>
@@ -170,7 +177,15 @@
     <Resource Include="Images\Полосочка.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Pages\AddClub_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Authorization_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Club_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -219,8 +234,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

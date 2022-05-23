@@ -24,5 +24,11 @@ namespace DogShowProgram.Pages
         {
             InitializeComponent();
         }
+
+        private void club_but_Click(object sender, RoutedEventArgs e)
+        {
+            Club_Page club_Page = new Club_Page();
+            Scripts.DataHolder.frame_main.Navigate(club_Page);
+        }
     }
 }

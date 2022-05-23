@@ -9,8 +9,17 @@
       Title="Main_Page">
 
     <Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"> 
-            <Button Style="{DynamicResource Rounded}" Content="Клубы"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="club_but"
+                Style="{DynamicResource Rounded}" Content="Клубы" Click="club_but_Click"/>
+            <Button 
+                Style="{DynamicResource Rounded}" Width="220">
+                <TextBlock HorizontalAlignment="Center" TextAlignment="Center">
+                    Собаки и <LineBreak/>
+                    их владельци
+                </TextBlock>
+            </Button>
+           
         </StackPanel>
     </Grid>
 </Page>

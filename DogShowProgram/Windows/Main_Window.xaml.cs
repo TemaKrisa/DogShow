@@ -23,5 +23,12 @@ namespace DogShowProgram.Windows
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Scripts.DataHolder.frame_main = frame_main;
+            Pages.Main_Page main_Page = new Pages.Main_Page();
+            frame_main.Navigate(main_Page);
+        }
     }
 }
