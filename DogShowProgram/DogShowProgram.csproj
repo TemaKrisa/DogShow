@@ -41,6 +41,7 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -104,11 +105,23 @@
     <Compile Include="Pages\AddClub_Page.xaml.cs">
       <DependentUpon>AddClub_Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\addDogOwner_Page.xaml.cs">
+      <DependentUpon>addDogOwner_Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Club_Page.xaml.cs">
       <DependentUpon>Club_Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DogAndOther_Page.xaml.cs">
+      <DependentUpon>DogAndOther_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DogOwner_Page.xaml.cs">
+      <DependentUpon>DogOwner_Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EditClub_Page.xaml.cs">
       <DependentUpon>EditClub_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\editDogOwner_Page.xaml.cs">
+      <DependentUpon>editDogOwner_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Main_Page.xaml.cs">
       <DependentUpon>Main_Page.xaml</DependentUpon>
@@ -184,6 +197,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\addDogOwner_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Authorization_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -192,7 +209,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\DogAndOther_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DogOwner_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\EditClub_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\editDogOwner_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -201,6 +230,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\buttons_Dictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\comboBox_Dictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

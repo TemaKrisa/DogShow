@@ -16,25 +16,19 @@ using System.Windows.Shapes;
 namespace DogShowProgram.Pages
 {
     /// <summary>
-    /// Interaction logic for Main_Page.xaml
+    /// Interaction logic for DogAndOther_Page.xaml
     /// </summary>
-    public partial class Main_Page : Page
+    public partial class DogAndOther_Page : Page
     {
-        public Main_Page()
+        public DogAndOther_Page()
         {
             InitializeComponent();
         }
 
-        private void club_but_Click(object sender, RoutedEventArgs e)
+        private void dogOwner_but_Click(object sender, RoutedEventArgs e)
         {
-            Club_Page club_Page = new Club_Page();
-            Scripts.DataHolder.frame_main.Navigate(club_Page);
-        }
-
-        private void dogAndOther_but_Click(object sender, RoutedEventArgs e)
-        {
-            DogAndOther_Page page = new DogAndOther_Page();
-            Scripts.DataHolder.frame_main.Navigate(page);
+            DogOwner_Page dogOwner = new DogOwner_Page();
+            Scripts.DataHolder.frame_main.Navigate(dogOwner);
         }
     }
 }

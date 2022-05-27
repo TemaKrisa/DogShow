@@ -12,8 +12,8 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="club_but"
                 Style="{DynamicResource Rounded}" Content="Клубы" Click="club_but_Click"/>
-            <Button 
-                Style="{DynamicResource Rounded}" Width="220">
+            <Button x:Name="dogAndOther_but"
+                Style="{DynamicResource Rounded}" Width="220" Click="dogAndOther_but_Click">
                 <TextBlock HorizontalAlignment="Center" TextAlignment="Center">
                     Собаки и <LineBreak/>
                     их владельци
