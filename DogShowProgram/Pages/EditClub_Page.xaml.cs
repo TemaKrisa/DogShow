@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Entity;
 
 namespace DogShowProgram.Pages
 {
@@ -20,7 +21,7 @@ namespace DogShowProgram.Pages
     /// </summary>
     public partial class EditClub_Page : Page
     {
-        Club club;
+        Club club = new Club();
         public Club Club
         {
             set
@@ -43,6 +44,32 @@ namespace DogShowProgram.Pages
             breedClub_textbox.Text = club.Breed;
             maxNumber_textbox.Text = Convert.ToString(club.MaxNumber);
             minNumber_textbox.Text = Convert.ToString(club.MinNumber);
+        }
+
+        private void deleteClub_but_Click(object sender, RoutedEventArgs e)
+        {
+            using (DogShowEntities db = new DogShowEntities())
+            {
+                db.Entry(club).State = EntityState.Deleted;
+                db.SaveChanges();
+                Windows.Messagebox_Window messagebox = new Windows.Messagebox_Window() {nameMessage = "Уведомление", Message = "Клуб был успешна удалён!", error = false};
+                messagebox.ShowDialog();
+                Scripts.DataHolder.frame_main.GoBack();
+            }
+        }
+
+        private void editClub_but_Click(object sender, RoutedEventArgs e)
+        {
+            using (DogShowEntities db = new DogShowEntities())
+            {
+                club.NameClub = nameClub_textbox.Text;
+                club.Breed = breedClub_textbox.Text;
+                db.Entry(club).State = EntityState.Modified;
+                db.SaveChanges();
+                Windows.Messagebox_Window messagebox = new Windows.Messagebox_Window() { nameMessage = "Уведомление", Message = "Клуб был изменён", error = false };
+                messagebox.ShowDialog();
+                Scripts.DataHolder.frame_main.GoBack();
+            }
         }
     }
 }

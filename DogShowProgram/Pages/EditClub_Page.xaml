@@ -13,9 +13,12 @@
                 Height="60" Content="Назад" HorizontalAlignment="Left" 
                 VerticalAlignment="Top" Click="back_but_Click"/>
 
-        <Button Style="{DynamicResource Rounded}" x:Name="addClub_but"
+        <Button Style="{DynamicResource Rounded}" x:Name="editClub_but"
                 Height="60" Content="Изменить" HorizontalAlignment="Right" 
-                VerticalAlignment="Top"/>
+                VerticalAlignment="Top" Click="editClub_but_Click"/>
+        <Button Style="{DynamicResource Rounded}" x:Name="deleteClub_but"
+                Height="60" Content="Удалить" HorizontalAlignment="Right" 
+                VerticalAlignment="Top" Margin="0,8,164,0" Click="deleteClub_but_Click"/>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
             <StackPanel HorizontalAlignment="Left">
