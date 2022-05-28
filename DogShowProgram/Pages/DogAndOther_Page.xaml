@@ -13,7 +13,7 @@
             <Button x:Name="dog_but"
                 Style="{DynamicResource Rounded}" Content="Собаки"/>
             <Button x:Name="dogPassport_but"
-                Style="{DynamicResource Rounded}">
+                Style="{DynamicResource Rounded}" Click="dogPassport_but_Click">
                 <TextBlock TextAlignment="Center">
                     Паспорта<LineBreak/>
                     Собак

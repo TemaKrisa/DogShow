@@ -10,42 +10,35 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DogShowProgram.Pages
+namespace DogShowProgram.Windows
 {
     /// <summary>
-    /// Interaction logic for DogOwner_Page.xaml
+    /// Interaction logic for ChangeOwner_Window.xaml
     /// </summary>
-    public partial class DogOwner_Page : Page
+    public partial class ChangeOwner_Window : Window
     {
-        public DogOwner_Page()
+        public Page lastWindow;
+        public ChangeOwner_Window()
         {
             InitializeComponent();
         }
 
-        private void back_but_Click(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Scripts.DataHolder.frame_main.GoBack();
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            using(DogShowEntities db = new DogShowEntities())
+            using (DogShowEntities db = new DogShowEntities())
             {
                 datagrid_dogOwner.ItemsSource = db.DogOwner.ToList();
             }
-           
         }
 
-        private void AddClub_but_Click(object sender, RoutedEventArgs e)
+        private void back_but_Click(object sender, RoutedEventArgs e)
         {
-            addDogOwner_Page page = new addDogOwner_Page();
-            Scripts.DataHolder.frame_main.Navigate(page);
+            this.Close();
         }
 
-        private void editDogOwner_but_Click(object sender, RoutedEventArgs e)
+        private void changeDogOwner_but_Click(object sender, RoutedEventArgs e)
         {
             int r = datagrid_dogOwner.SelectedIndex;
 
@@ -77,15 +70,13 @@ namespace DogShowProgram.Pages
                 }
                 i++;
             }
-            int series = Convert.ToInt32( passportSeries);
+            int series = Convert.ToInt32(passportSeries);
             int number = Convert.ToInt32(passportNumber);
 
             using (DogShowEntities db = new DogShowEntities())
             {
-                DogOwner owner = db.DogOwner.Where(p => p.Surname == surname && p.Name == name && p.PassportSeries == series ).FirstOrDefault();
-
-                editDogOwner_Page editDogOwner = new editDogOwner_Page() { owner = owner };
-                Scripts.DataHolder.frame_main.Navigate(editDogOwner);        
+                DogOwner owner = db.DogOwner.Where(p => p.Surname == surname && p.Name == name && p.PassportSeries == series).FirstOrDefault();
+               
             }
         }
     }

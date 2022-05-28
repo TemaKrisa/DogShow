@@ -1,0 +1,42 @@
+﻿<Page x:Class="DogShowProgram.Pages.DogPassport_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DogShowProgram.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Club_Page" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Button Style="{DynamicResource Rounded}" x:Name="back_but"
+                Height="60" Content="Назад" HorizontalAlignment="Left" Click="back_but_Click_1"/>
+        <Button Style="{DynamicResource Rounded}" x:Name="addDogPassport_but"
+                Height="60" Content="Добавить" HorizontalAlignment="Right" Click="addDogPassport_but_Click"/>
+
+        <DataGrid AutoGenerateColumns="False" x:Name="datagrid_dogPassport"
+            Grid.Row="1" Margin="5" CanUserAddRows="False" IsReadOnly="True"  ColumnWidth="*">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Кличка" Binding="{Binding NickName}" Width="*"/>
+                <DataGridTextColumn Header="Последняя дата прививки" Binding="{Binding LastDateVaccination}" Width="*"/>
+                <DataGridTextColumn Header="Пол" Binding="{Binding Gender}" Width="*"/>
+                <DataGridTextColumn Header="Дата рождения" Binding="{Binding BrithdayDate, StringFormat='yyy-MM-dd'}"/>
+                <DataGridTextColumn Header="Порода" Binding="{Binding Breed}" />
+                <DataGridTextColumn Header="Ф.И.О владельца" Binding="{Binding DogOwner}" Width="*"/>
+                <DataGridTemplateColumn Header="Изменить">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="editDogOwner_but" 
+                                    Content="Изменить" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

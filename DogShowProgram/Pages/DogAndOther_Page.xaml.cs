@@ -30,5 +30,11 @@ namespace DogShowProgram.Pages
             DogOwner_Page dogOwner = new DogOwner_Page();
             Scripts.DataHolder.frame_main.Navigate(dogOwner);
         }
+
+        private void dogPassport_but_Click(object sender, RoutedEventArgs e)
+        {
+            DogPassport_Page page = new DogPassport_Page();
+            Scripts.DataHolder.frame_main.Navigate(page);
+        }
     }
 }
