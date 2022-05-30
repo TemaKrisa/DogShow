@@ -20,7 +20,7 @@ namespace DogShowProgram.Pages
     /// </summary>
     public partial class AddDogPassport_Page : Page
     {
-        DogOwner owner;
+        public DogOwner owner;
         public AddDogPassport_Page()
         {
             InitializeComponent();
@@ -39,8 +39,35 @@ namespace DogShowProgram.Pages
         private void setOwner_but_Click(object sender, RoutedEventArgs e)
         {
             Windows.ChangeOwner_Window window = new Windows.ChangeOwner_Window();
-            window.lastWindow = this;
+            window.dogPassport_Page = this;
             window.ShowDialog();
+        }
+
+        private void addDogPassport_but_Click(object sender, RoutedEventArgs e)
+        {
+            using (DogShowEntities db = new DogShowEntities()) {
+                DogPassport passport = new DogPassport
+                {
+                    NickName = nickName_textbox.Text,
+                    Gender = gender_cb.Text,
+                    Breed = breed_textbox.Text,
+                    LastDateVaccination = vaccinationDate_datePic.DisplayDate,
+                    BrithdayDate = brithdayDate_datePic.DisplayDate,
+                    IdDogOwner = owner.IdDogOwner
+                };
+                db.DogPassport.Add(passport);
+                db.SaveChanges();
+
+                Windows.Messagebox_Window messagebox = new Windows.Messagebox_Window() 
+                {
+                    nameMessage = "Уведомление", 
+                    Message = "Паспорт собаки добавлен.", 
+                    error = false 
+                };
+                messagebox.ShowDialog();
+                Scripts.DataHolder.frame_main.GoBack();
+            }
+
         }
     }
 }

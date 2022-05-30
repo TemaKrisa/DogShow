@@ -15,7 +15,7 @@ d:DesignHeight="450" d:DesignWidth="800"
 
         <Button Style="{DynamicResource Rounded}" x:Name="addOwner_but"
                 Height="60" Content="Добавить" HorizontalAlignment="Right" 
-                VerticalAlignment="Top" Click="addOwner_but_Click" />
+                VerticalAlignment="Top" Click="addDogPassport_but_Click" />
 
         <StackPanel Margin="0,70"
             HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">

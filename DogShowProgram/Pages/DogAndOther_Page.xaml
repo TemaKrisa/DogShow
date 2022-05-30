@@ -9,9 +9,12 @@
       Title="Main_Page">
 
     <Grid>
+        <Button Style="{DynamicResource Rounded}" x:Name="back_but" VerticalAlignment="Top"
+                Height="60" Content="Назад" HorizontalAlignment="Left" Click="back_but_Click" />
+        
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="dog_but"
-                Style="{DynamicResource Rounded}" Content="Собаки"/>
+                Style="{DynamicResource Rounded}" Content="Собаки" Click="dog_but_Click"/>
             <Button x:Name="dogPassport_but"
                 Style="{DynamicResource Rounded}" Click="dogPassport_but_Click">
                 <TextBlock TextAlignment="Center">

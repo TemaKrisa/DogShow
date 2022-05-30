@@ -19,7 +19,7 @@ namespace DogShowProgram.Windows
     /// </summary>
     public partial class ChangeOwner_Window : Window
     {
-        public Page lastWindow;
+        public Pages.AddDogPassport_Page dogPassport_Page;
         public ChangeOwner_Window()
         {
             InitializeComponent();
@@ -75,8 +75,14 @@ namespace DogShowProgram.Windows
 
             using (DogShowEntities db = new DogShowEntities())
             {
-                DogOwner owner = db.DogOwner.Where(p => p.Surname == surname && p.Name == name && p.PassportSeries == series).FirstOrDefault();
-               
+                DogOwner owner = db.DogOwner.Where(p => p.Surname == surname && p.Name == name && p.PassportSeries == series).FirstOrDefault();            
+
+                dogPassport_Page.nameOwner_textbox.Text = owner.Name;
+                dogPassport_Page.surnameOwner_textbox.Text = owner.Surname;
+                dogPassport_Page.pathronymicOwner_textbox.Text = owner.Pathronymic;
+
+                dogPassport_Page.owner = owner;
+                this.Close();
             }
         }
     }

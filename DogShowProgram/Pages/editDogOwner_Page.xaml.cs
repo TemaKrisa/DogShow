@@ -62,5 +62,17 @@ namespace DogShowProgram.Pages
             messagebox.ShowDialog();
             Scripts.DataHolder.frame_main.GoBack();
         }
+
+        private void deleteDogOwner_but_Click(object sender, RoutedEventArgs e)
+        {
+            using (DogShowEntities db = new DogShowEntities())
+            {
+                db.Entry(owner).State = EntityState.Deleted;
+                db.SaveChanges();
+                Windows.Messagebox_Window messagebox = new Windows.Messagebox_Window() { nameMessage = "Уведомление", Message = "Владелец был удалён!", error = false };
+                messagebox.ShowDialog();
+                Scripts.DataHolder.frame_main.GoBack();
+            }
+        }
     }
 }

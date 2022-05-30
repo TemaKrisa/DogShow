@@ -36,5 +36,16 @@ namespace DogShowProgram.Pages
             DogPassport_Page page = new DogPassport_Page();
             Scripts.DataHolder.frame_main.Navigate(page);
         }
+
+        private void back_but_Click(object sender, RoutedEventArgs e)
+        {
+            Scripts.DataHolder.frame_main.GoBack();
+        }
+
+        private void dog_but_Click(object sender, RoutedEventArgs e)
+        {
+            Dog_Page page = new Dog_Page();
+            Scripts.DataHolder.frame_main.Navigate(page);
+        }
     }
 }

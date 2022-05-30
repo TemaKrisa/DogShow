@@ -16,6 +16,9 @@
         <Button Style="{DynamicResource Rounded}" Width="160" x:Name="editOwner_but"
                 Height="60" Content="Изменить" HorizontalAlignment="Right" 
                 VerticalAlignment="Top" Click="editOwner_but_Click"/>
+        <Button Style="{DynamicResource Rounded}" x:Name="deleteDogOwner_but"
+                Height="60" Content="Удалить" HorizontalAlignment="Right" 
+                VerticalAlignment="Top" Margin="0,8,174,0" Click="deleteDogOwner_but_Click"/>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
             <StackPanel HorizontalAlignment="Left">
