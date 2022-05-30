@@ -17,7 +17,7 @@
         <Button Style="{DynamicResource Rounded}" x:Name="back_but"
                 Height="60" Content="Назад" HorizontalAlignment="Left" Click="back_but_Click"/>
         <Button Style="{DynamicResource Rounded}" x:Name="addDog_but"
-                Height="60" Content="Добавить" HorizontalAlignment="Right" />
+                Height="60" Content="Добавить" HorizontalAlignment="Right" Click="addDog_but_Click" />
 
         <DataGrid AutoGenerateColumns="False" x:Name="datagrid_dog"
             Grid.Row="1" Margin="5" CanUserAddRows="False" IsReadOnly="True"  ColumnWidth="*">

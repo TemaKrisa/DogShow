@@ -52,5 +52,11 @@ namespace DogShowProgram.Pages
         {
 
         }
+
+        private void addDog_but_Click(object sender, RoutedEventArgs e)
+        {
+            AddDog_Page page = new AddDog_Page();
+            Scripts.DataHolder.frame_main.Navigate(page);
+        }
     }
 }

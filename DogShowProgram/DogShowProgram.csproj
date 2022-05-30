@@ -111,6 +111,9 @@
     <Compile Include="Pages\AddDogPassport_Page.xaml.cs">
       <DependentUpon>AddDogPassport_Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddDog_Page.xaml.cs">
+      <DependentUpon>AddDog_Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Club_Page.xaml.cs">
       <DependentUpon>Club_Page.xaml</DependentUpon>
     </Compile>
@@ -150,6 +153,9 @@
     </Compile>
     <Compile Include="Windows\Authorization_Window.xaml.cs">
       <DependentUpon>Authorization_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ChangeClub_Window.xaml.cs">
+      <DependentUpon>ChangeClub_Window.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ChangeOwner_Window.xaml.cs">
       <DependentUpon>ChangeOwner_Window.xaml</DependentUpon>
@@ -217,6 +223,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AddDog_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Authorization_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -266,6 +276,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Authorization_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ChangeClub_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
