@@ -35,7 +35,7 @@ namespace DogShowProgram.Windows
 
         private void back_but_Click(object sender, RoutedEventArgs e)
         {
-            Scripts.DataHolder.frame_main.GoBack();
+            this.Close();
         }
 
         private void changeClub_but_Click(object sender, RoutedEventArgs e)
@@ -63,7 +63,7 @@ namespace DogShowProgram.Windows
 
             using (DogShowEntities db = new DogShowEntities())
             {
-                Club club = db.Club.Where(p => p.NameClub == nameClub && p.Breed == breed).FirstOrDefault();
+                Club club = db.Club.Where(p => p.NameClub == nameClub).FirstOrDefault();
 
                 AddDog_Page.clubName_textbox.Text = club.NameClub;
                 AddDog_Page.breedClub_textbox.Text = club.Breed;

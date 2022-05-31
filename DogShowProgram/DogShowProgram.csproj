@@ -157,6 +157,9 @@
     <Compile Include="Windows\ChangeClub_Window.xaml.cs">
       <DependentUpon>ChangeClub_Window.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ChangeDogPassport_Window.xaml.cs">
+      <DependentUpon>ChangeDogPassport_Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ChangeOwner_Window.xaml.cs">
       <DependentUpon>ChangeOwner_Window.xaml</DependentUpon>
     </Compile>
@@ -280,6 +283,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ChangeClub_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ChangeDogPassport_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
