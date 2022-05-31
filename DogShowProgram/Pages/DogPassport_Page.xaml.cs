@@ -55,5 +55,62 @@ namespace DogShowProgram.Pages
             AddDogPassport_Page page = new AddDogPassport_Page();
             Scripts.DataHolder.frame_main.Navigate(page);
         }
+
+        private void editDogPassport_but_Click(object sender, RoutedEventArgs e)
+        {
+            int r = datagrid_dogPassport.SelectedIndex;
+
+            string nickName = null;
+            string LastDateVaccination = null;
+            string Gender = null;
+            string breed = null;
+
+            for (int i = 0; i < 6;)
+            {
+                switch (i)
+                {
+                    case 0:
+                        TextBlock itemL = datagrid_dogPassport.Columns[i].GetCellContent(datagrid_dogPassport.Items[r]) as TextBlock;
+                        nickName = itemL.Text;
+                        break;
+                    case 1:
+                        TextBlock itemP = datagrid_dogPassport.Columns[i].GetCellContent(datagrid_dogPassport.Items[r]) as TextBlock;
+                        LastDateVaccination = itemP.Text;
+                        break;
+                    case 2:
+                        TextBlock itemf = datagrid_dogPassport.Columns[i].GetCellContent(datagrid_dogPassport.Items[r]) as TextBlock;
+                        Gender = itemf.Text;
+                        break;
+                    case 4:
+                        TextBlock itemS = datagrid_dogPassport.Columns[i].GetCellContent(datagrid_dogPassport.Items[r]) as TextBlock;
+                        breed = itemS.Text;
+                        break;
+                }
+                i++;
+            }
+            
+
+            using (DogShowEntities db = new DogShowEntities())
+            {
+                DogPassport passport = db.DogPassport.Where(p => p.NickName == nickName && p.Gender == Gender && p.Breed == breed).FirstOrDefault();
+
+                EditDogPassport_Page page = new EditDogPassport_Page() {
+                    passport = passport
+                };
+                page.nickName_textbox.Text = passport.NickName;
+                page.gender_cb.Text = passport.Gender;
+                page.breed_textbox.Text = passport.Breed;
+                page.vaccinationDate_datePic.SelectedDate = passport.LastDateVaccination;
+                page.brithdayDate_datePic.SelectedDate = passport.BrithdayDate;
+
+                page.nameOwner_textbox.Text = passport.DogOwner.Name;
+                page.surnameOwner_textbox.Text = passport.DogOwner.Surname;
+                page.pathronymicOwner_textbox.Text = passport.DogOwner.Pathronymic;
+
+                page.owner = passport.DogOwner;
+
+                Scripts.DataHolder.frame_main.Navigate(page);
+            }
+        }
     }
 }

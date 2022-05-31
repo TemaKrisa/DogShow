@@ -31,8 +31,8 @@
                 <DataGridTemplateColumn Header="Изменить">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="editDogOwner_but" 
-                                    Content="Изменить" />
+                            <Button x:Name="editDogPassport_but" 
+                                    Content="Изменить" Click="editDogPassport_but_Click" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
