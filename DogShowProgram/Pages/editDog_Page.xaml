@@ -1,0 +1,50 @@
+﻿<Page x:Class="DogShowProgram.Pages.editDog_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DogShowProgram.Pages"
+      mc:Ignorable="d" 
+d:DesignHeight="550" d:DesignWidth="900"
+      Title="AddClub_Page" >
+
+    <Grid>
+        <Button Style="{DynamicResource Rounded}" x:Name="back_but"
+                Height="60" Content="Назад" HorizontalAlignment="Left" 
+                VerticalAlignment="Top" Click="back_but_Click"/>
+
+        <Button Style="{DynamicResource Rounded}" x:Name="editDog_but"
+                Height="60" Content="Изменить" HorizontalAlignment="Right" 
+                VerticalAlignment="Top" Click="editDog_but_Click" />
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <StackPanel HorizontalAlignment="Left">
+                <TextBlock Text="Паспорт собаки" />
+                <TextBox x:Name="nickNameDog_textbox"
+                    Style="{DynamicResource textbox_rounden}" Height="70" Width="170"/>
+                <Button FontSize="22" x:Name="setDog_but"
+                    Style="{DynamicResource Rounded}" Height="45" Content="Определить" Click="setDogPassport_but_Click"/>
+                <TextBlock Text="Кличка матери" />
+                <TextBox x:Name="motherNickName_textbox"
+                    Style="{DynamicResource textbox_rounden}" Height="70" Width="170"/>
+                <TextBlock Text="Кличка отца" />
+                <TextBox x:Name="fatherNickName_textbox"
+                    Style="{DynamicResource textbox_rounden}" Height="70" Width="170"/>
+
+
+            </StackPanel>
+            <StackPanel Margin="30,0,0,0">
+                <TextBlock Text="Название клуба" />
+                <TextBox x:Name="clubName_textbox" 
+                    Style="{DynamicResource textbox_rounden}" Height="70" Width="170"/>
+                <TextBlock Text="Порода"/>
+                <TextBox x:Name="breedClub_textbox"
+                    Style="{DynamicResource textbox_rounden}" Height="70" Width="170"/>
+                <Button FontSize="22" x:Name="setClub_but"
+                    Style="{DynamicResource Rounded}" Height="45" Content="Определить" Click="setClub_but_Click"/>
+
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

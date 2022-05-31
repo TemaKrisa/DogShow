@@ -138,6 +138,9 @@
     <Compile Include="Pages\EditDogPassport_Page.xaml.cs">
       <DependentUpon>EditDogPassport_Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\editDog_Page.xaml.cs">
+      <DependentUpon>editDog_Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Main_Page.xaml.cs">
       <DependentUpon>Main_Page.xaml</DependentUpon>
     </Compile>
@@ -266,6 +269,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\EditDogPassport_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\editDog_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

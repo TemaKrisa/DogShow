@@ -29,7 +29,7 @@ namespace DogShowProgram.Pages
 
         private void back_but_Click(object sender, RoutedEventArgs e)
         {
-         Scripts.DataHolder.frame_main.GoBack();
+          Scripts.DataHolder.frame_main.GoBack();
         }
 
         private void setClub_but_Click(object sender, RoutedEventArgs e)

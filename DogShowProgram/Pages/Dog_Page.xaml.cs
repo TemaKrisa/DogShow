@@ -50,7 +50,46 @@ namespace DogShowProgram.Pages
 
         private void editDog_but_Click(object sender, RoutedEventArgs e)
         {
+            int r = datagrid_dog.SelectedIndex;
+            string clubName = null;
+            string motherNick = null;
+            string fatherNick = null;
 
+            for (int i = 0; i < 10;)
+            {
+                switch (i)
+                {
+                    case 1:
+                        TextBlock itemR = datagrid_dog.Columns[i].GetCellContent(datagrid_dog.Items[r]) as TextBlock;
+                        clubName = itemR.Text;
+                        break;
+                    case 2:
+                        TextBlock itemL = datagrid_dog.Columns[i].GetCellContent(datagrid_dog.Items[r]) as TextBlock;
+                        motherNick = itemL.Text;
+                        break;
+                    case 3:
+                        TextBlock itemP = datagrid_dog.Columns[i].GetCellContent(datagrid_dog.Items[r]) as TextBlock;
+                        fatherNick = itemP.Text;
+                        break;
+
+                }
+                i++;
+            }
+
+            using (DogShowEntities db = new DogShowEntities())
+            {
+                Dog dog = db.Dog.Where(p => p.Club.NameClub == clubName && p.MotherNickName == motherNick && p.FatherNickName == fatherNick).FirstOrDefault();
+
+                editDog_Page page = new editDog_Page() { dog = dog ,club = dog.Club};
+
+                page.nickNameDog_textbox.Text = dog.DogPassport.NickName;
+                page.motherNickName_textbox.Text = dog.MotherNickName;
+                page.fatherNickName_textbox.Text = dog.FatherNickName;
+                page.clubName_textbox.Text = dog.Club.NameClub;
+                page.breedClub_textbox.Text = dog.Club.Breed;
+
+                Scripts.DataHolder.frame_main.Navigate(page);
+            }
         }
 
         private void addDog_but_Click(object sender, RoutedEventArgs e)
