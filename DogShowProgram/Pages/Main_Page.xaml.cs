@@ -36,5 +36,10 @@ namespace DogShowProgram.Pages
             DogAndOther_Page page = new DogAndOther_Page();
             Scripts.DataHolder.frame_main.Navigate(page);
         }
+
+        private void expert_but_Click(object sender, RoutedEventArgs e)
+        {
+            Scripts.DataHolder.frame_main.Navigate(new Expert_Page());
+        }
     }
 }

@@ -19,7 +19,8 @@
                     их владельци
                 </TextBlock>
             </Button>
-           
+            <Button x:Name="expert_but"
+                Style="{DynamicResource Rounded}" Content="Эксперты" Click="expert_but_Click"/>
         </StackPanel>
     </Grid>
 </Page>

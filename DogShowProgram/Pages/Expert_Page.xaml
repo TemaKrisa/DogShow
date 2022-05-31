@@ -1,0 +1,40 @@
+﻿<Page x:Class="DogShowProgram.Pages.Expert_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DogShowProgram.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Club_Page" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Button Style="{DynamicResource Rounded}" x:Name="back_but"
+                Height="60" Content="Назад" HorizontalAlignment="Left" Click="back_but_Click"/>
+        <Button Style="{DynamicResource Rounded}" x:Name="addExpert_but"
+                Height="60" Content="Добавить" HorizontalAlignment="Right" />
+
+        <DataGrid AutoGenerateColumns="False" x:Name="datagrid_dog"
+            Grid.Row="1" Margin="5" CanUserAddRows="False" IsReadOnly="True"  ColumnWidth="*">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}" Width="*"/>
+                <DataGridTextColumn Header="Номер ринга" Binding="{Binding IdRing}" Width="*"/>
+                <DataGridTextColumn Header="Название клуба" Binding="{Binding NameClub}" Width="*"/>
+                <DataGridTemplateColumn Header="Изменить">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="editExpert_but" 
+                                    Content="Изменить" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
