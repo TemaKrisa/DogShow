@@ -29,8 +29,8 @@
                 <DataGridTemplateColumn Header="Изменить">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="editExpert_but" 
-                                    Content="Изменить" />
+                            <Button x:Name="editExpert_but"
+                                    Content="Изменить" Click="editExpert_but_Click" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

@@ -144,6 +144,9 @@
     <Compile Include="Pages\editDog_Page.xaml.cs">
       <DependentUpon>editDog_Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\editExpert_Page.xaml.cs">
+      <DependentUpon>editExpert_Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Expert_Page.xaml.cs">
       <DependentUpon>Expert_Page.xaml</DependentUpon>
     </Compile>
@@ -289,6 +292,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\editExpert_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Expert_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -353,6 +360,7 @@
       <DependentUpon>Ado.edmx</DependentUpon>
       <LastGenOutput>Ado.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\Logo.png" />
     <Resource Include="Images\Error.png" />
   </ItemGroup>
   <ItemGroup>

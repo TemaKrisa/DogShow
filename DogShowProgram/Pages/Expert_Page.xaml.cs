@@ -51,5 +51,53 @@ namespace DogShowProgram.Pages
         {
             Scripts.DataHolder.frame_main.Navigate(new addExpert_Page());
         }
+
+        private void editExpert_but_Click(object sender, RoutedEventArgs e)
+        {
+            int r = datagrid_dog.SelectedIndex;
+            string name = null;
+            string clubName = null;
+            int idRing = 0;
+
+            for (int i = 0; i < 10;)
+            {
+                switch (i)
+                {
+                    case 0:
+                        TextBlock itemR = datagrid_dog.Columns[i].GetCellContent(datagrid_dog.Items[r]) as TextBlock;
+                        name = itemR.Text;
+                        break;
+                    case 3:
+                        TextBlock itemL = datagrid_dog.Columns[i].GetCellContent(datagrid_dog.Items[r]) as TextBlock;
+                        clubName = itemL.Text;
+                        break;
+                    case 2:
+                        TextBlock itemP = datagrid_dog.Columns[i].GetCellContent(datagrid_dog.Items[r]) as TextBlock;
+                        idRing = Convert.ToInt32(itemP.Text);
+                        break;
+
+                }
+                i++;
+            }
+
+            using (DogShowEntities db = new DogShowEntities())
+            {
+                Expert expert = db.Expert.Where(p => p.Name == name && p.Club.NameClub == clubName && p.IdRing == idRing).FirstOrDefault();
+
+                editExpert_Page page = new editExpert_Page()
+                {
+                    expert = expert,
+                };
+
+                page.nameExpert_textbox.Text = expert.Club.NameClub;
+                page.surnameExpert_textbox.Text = expert.Surname;
+                page.idRing_combobox.Text = Convert.ToString(expert.IdRing);
+                page.nameClub_textbox.Text = expert.Club.NameClub;
+
+                Scripts.DataHolder.frame_main.Navigate(page);
+
+                
+            }
+        }
     }
 }
