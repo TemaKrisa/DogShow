@@ -41,5 +41,10 @@ namespace DogShowProgram.Pages
         {
             Scripts.DataHolder.frame_main.Navigate(new Expert_Page());
         }
+
+        private void ring_but_Click(object sender, RoutedEventArgs e)
+        {
+            Scripts.DataHolder.frame_main.Navigate(new Ring_Page());
+        }
     }
 }

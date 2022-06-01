@@ -1,4 +1,4 @@
-﻿<Page x:Class="DogShowProgram.Pages.Expert_Page"
+﻿<Page x:Class="DogShowProgram.Pages.Ring_Page"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -16,25 +16,28 @@
 
         <Button Style="{DynamicResource Rounded}" x:Name="back_but"
                 Height="60" Content="Назад" HorizontalAlignment="Left" Click="back_but_Click"/>
-        <Button Style="{DynamicResource Rounded}" x:Name="addExpert_but"
-                Height="60" Content="Добавить" HorizontalAlignment="Right" Click="addExpert_but_Click" />
+        <Button Style="{DynamicResource Rounded}" x:Name="AddClub_but"
+                Height="60" Content="Добавить" HorizontalAlignment="Right" Click="AddRing_but_Click"/>
 
-        <DataGrid AutoGenerateColumns="False" x:Name="datagrid_dog"
-            Grid.Row="1" Margin="5" CanUserAddRows="False" IsReadOnly="True"  ColumnWidth="*">
+        <DataGrid AutoGenerateColumns="False" x:Name="datagrid_ring"
+            Grid.Row="1" Margin="5" CanUserAddRows="False" 
+                  IsReadOnly="True" ColumnWidth="*" >
             <DataGrid.Columns >
-                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"/>
-                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}" Width="*"/>
-                <DataGridTextColumn Header="Номер ринга" Binding="{Binding IdRing}" Width="*"/>
-                <DataGridTextColumn Header="Название клуба" Binding="{Binding NameClub}" Width="*"/>
+                <DataGridTextColumn Header="Номер ринга" Binding="{Binding IdRing}"/>
+                <DataGridTextColumn Header="Порода" Binding="{Binding Breed}"/>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date}"/>
+                <DataGridTextColumn Header="Начальное время" Binding="{Binding StartTime}"/>
+                <DataGridTextColumn Header="Конечное время" Binding="{Binding EndTime}"/>
                 <DataGridTemplateColumn Header="Изменить">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="editExpert_but" 
-                                    Content="Изменить" />
+                            <Button x:Name="editRing_but" 
+                                    Content="Изменить" Click="editRing_but_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
+
 </Page>

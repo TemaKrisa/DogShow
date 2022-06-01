@@ -21,6 +21,8 @@
             </Button>
             <Button x:Name="expert_but"
                 Style="{DynamicResource Rounded}" Content="Эксперты" Click="expert_but_Click"/>
+            <Button x:Name="ring_but"
+                Style="{DynamicResource Rounded}" Content="Ринги" Click="ring_but_Click"/>
         </StackPanel>
     </Grid>
 </Page>

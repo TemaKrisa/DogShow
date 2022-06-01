@@ -20,6 +20,7 @@ namespace DogShowProgram.Windows
     public partial class ChangeClub_Window : Window
     {
         public Pages.AddDog_Page AddDog_Page = new Pages.AddDog_Page();
+        public Pages.addExpert_Page addExpert_Page = new Pages.addExpert_Page();
         public ChangeClub_Window()
         {
             InitializeComponent();
@@ -69,6 +70,7 @@ namespace DogShowProgram.Windows
                 AddDog_Page.breedClub_textbox.Text = club.Breed;
 
                 AddDog_Page.club = club;
+                addExpert_Page.club = club;
 
                 this.Close();
             }

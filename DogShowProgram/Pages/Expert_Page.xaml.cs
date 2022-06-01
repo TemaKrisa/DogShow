@@ -46,5 +46,10 @@ namespace DogShowProgram.Pages
 
             }
         }
+
+        private void addExpert_but_Click(object sender, RoutedEventArgs e)
+        {
+            Scripts.DataHolder.frame_main.Navigate(new addExpert_Page());
+        }
     }
 }
