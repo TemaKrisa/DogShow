@@ -32,7 +32,8 @@ namespace DogShowProgram.Pages
 
         private void AddRing_but_Click(object sender, RoutedEventArgs e)
         {
-
+            AddRing_Page page = new AddRing_Page();
+            Scripts.DataHolder.frame_main.Navigate(page);
         }
 
         private void editRing_but_Click(object sender, RoutedEventArgs e)

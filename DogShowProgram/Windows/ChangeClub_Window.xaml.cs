@@ -27,9 +27,10 @@ namespace DogShowProgram.Windows
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)         
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            using (DogShowEntities db = new DogShowEntities()) {
+            using (DogShowEntities db = new DogShowEntities())
+            {
                 datagrid_club.ItemsSource = db.Club.ToList();
             }
 
