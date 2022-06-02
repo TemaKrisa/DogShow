@@ -21,6 +21,7 @@ namespace DogShowProgram.Windows
     {
         public Pages.AddDog_Page AddDog_Page = new Pages.AddDog_Page();
         public Pages.addExpert_Page addExpert_Page = new Pages.addExpert_Page();
+        public Pages.editExpert_Page editExpert = new Pages.editExpert_Page();
         public ChangeClub_Window()
         {
             InitializeComponent();
@@ -71,6 +72,9 @@ namespace DogShowProgram.Windows
 
                 AddDog_Page.club = club;
                 addExpert_Page.club = club;
+
+                editExpert.expert.Club = club;
+                editExpert.expert.IdClub = club.IdClub;
 
                 this.Close();
             }

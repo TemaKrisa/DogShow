@@ -87,9 +87,10 @@ namespace DogShowProgram.Pages
                 editExpert_Page page = new editExpert_Page()
                 {
                     expert = expert,
+                    club = expert.Club
                 };
 
-                page.nameExpert_textbox.Text = expert.Club.NameClub;
+                page.nameExpert_textbox.Text = expert.Name;
                 page.surnameExpert_textbox.Text = expert.Surname;
                 page.idRing_combobox.Text = Convert.ToString(expert.IdRing);
                 page.nameClub_textbox.Text = expert.Club.NameClub;
