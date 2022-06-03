@@ -25,9 +25,9 @@
         <Polygon Grid.RowSpan="2" Stroke="#9BA3EB" Points=" 
                  40,64             
                  360,64" StrokeThickness="3"/>
-        <TextBlock Grid.Row="1"  x:Name="message_textbox"
-            Text="Уведомление" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" FontSize="15"/>
-        <Button x:Name="Ok_button"
+        <TextBlock Grid.Row="1"  x:Name="message_textbox" 
+            Text="Уведомление" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,20,10,10" FontSize="20"/>
+        <Button x:Name="Ok_button" Margin="0,0,0,10"
             Grid.Row="2" Style="{DynamicResource Rounded}"
             Height="35" VerticalAlignment="Top" Content="OK" FontSize="20" VerticalContentAlignment="Center" Click="Ok_button_Click" Cursor="Hand"/>
     </Grid>

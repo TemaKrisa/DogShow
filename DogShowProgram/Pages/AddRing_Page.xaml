@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       xmlns:local="clr-namespace:DogShowProgram.Pages"
       mc:Ignorable="d" 
@@ -29,18 +30,22 @@
                 
             </StackPanel>
             <StackPanel Margin="30,0,0,0">
+                
                 <TextBlock Text="Начало времени" />
                 <Border Background="White" Height="60" Width="170" CornerRadius="15" 
                         BorderBrush="#FF9BA3EB" BorderThickness="4">
-                    <xctk:TimePicker x:Name="startTime_tp" Height="45" Width="145" Background="Transparent" BorderThickness="0"
-                                 FontSize="20" TextAlignment="Center" FontWeight="Bold"/>
+                    <xctk:TimePicker x:Name="startTime_tp" FontSize="25" TextAlignment="Center"
+                                     Height="45" Width="155" Background="Transparent" BorderBrush="Transparent"
+                                     MouseDown="startTime_tp_MouseDown"/>
                 </Border>
-                <TextBlock Text="Конец времени" />
+                <TextBlock Text="Конец времени"/>
                 <Border Background="White" Height="60" Width="170" CornerRadius="15" 
                         BorderBrush="#FF9BA3EB" BorderThickness="4">
-                    <xctk:TimePicker  x:Name="endTime_tp" Height="45" Width="145" Background="Transparent" BorderThickness="0"
-                                 FontSize="20" TextAlignment="Center" FontWeight="Bold"/>
+                    
+                    <xctk:TimePicker x:Name="end_tp" Height="45" Width="155" FontSize="25" TextAlignment="Center" 
+                                     Background="Transparent" BorderBrush="Transparent"/>
                 </Border>
+
             </StackPanel>
             <StackPanel Margin="30,0,0,0">
                 <TextBlock Text="Дата проведения" />

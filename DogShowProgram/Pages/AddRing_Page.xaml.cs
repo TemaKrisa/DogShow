@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Xceed.Wpf.Toolkit;
 
+
 namespace DogShowProgram.Pages
 {
     /// <summary>
@@ -28,18 +29,26 @@ namespace DogShowProgram.Pages
 
         private void back_but_Click(object sender, RoutedEventArgs e)
         {
+            
+                System.Windows.MessageBox.Show($"{startTime_tp.Value}");
+
             Scripts.DataHolder.frame_main.GoBack();
         }
 
         private void addRing_but_Click(object sender, RoutedEventArgs e)
-        {
-            TimeSpan timeStart = startTime_tp.;
+        { 
+            string startTimeSt = startTime_tp.Value.ToString();
+            DateTime startTimeDt = Convert.ToDateTime(startTimeSt);
+
+            string endTimeSt = end_tp.Value.ToString();
+            DateTime endTimeDt = Convert.ToDateTime(endTimeSt);
+
             Ring ring = new Ring()
             {
                 Breed = breed_combobox.Text,
-                Date = selectDate_datePic.DisplayDate,              
-                StartTime = startTime_tp.,
-                EndTime = endTime_tp.TimeInterval
+                Date = selectDate_datePic.DisplayDate,
+                StartTime = startTimeDt.TimeOfDay,
+                EndTime = endTimeDt.TimeOfDay
             };
 
             using (DogShowEntities db = new DogShowEntities())
@@ -64,6 +73,11 @@ namespace DogShowProgram.Pages
                 breed_combobox.ItemsSource = db.Club.ToList();
                 idRing_textbox.Text = (string)((db.Ring.Max(p => p.IdRing) + 1).ToString());
             }
+        }
+
+        private void startTime_tp_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            
         }
     }
 }

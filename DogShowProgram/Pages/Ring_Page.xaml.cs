@@ -20,6 +20,7 @@ namespace DogShowProgram.Pages
     /// </summary>
     public partial class Ring_Page : Page
     {
+        
         public Ring_Page()
         {
             InitializeComponent();
